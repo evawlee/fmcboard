@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fmcboard"
+version = "0.1.0"
+description = "Security telemetry aggregator with multi-tenant policy push."
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[tool.pytest.ini_options]
+python_files = ["test_*.py", "__eval_*_sec.py"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fmcboard*"]
+exclude = ["tests*"]
